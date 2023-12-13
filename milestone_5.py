@@ -31,7 +31,7 @@ class Hangman:
         else:
              self.num_lives = self.num_lives - 1
              print(f"Sorry, {guess} is not in the word. Please try again. you have {self.num_lives} lives left.")
-    #function defining whether the user input is valid, and checking if they have already guessed the character in question. 
+    #function checking whether the user input is valid, andif they have already guessed the character in question. 
     def ask_for_input(self):
         self.list_of_guesses = []
         while True:
@@ -48,13 +48,12 @@ class Hangman:
             print(self.word_guessed)
             break
             
-
+#play_game function putting together the logic of the class Hangman, and implementing the num_lives and num_letters variables to 
+#determine when the player wins/loses. 
 def play_game(word_list):
         print("Welcome to hangman. Please guess a letter below.")
         num_lives = 5 
         game = Hangman(word_list, num_lives)
-        #print(game.num_letters)
-        #print(game.num_lives)
         while True:
             if game.num_lives == 0:
                print("you have lost. please restart the game.") 
@@ -69,7 +68,7 @@ def play_game(word_list):
              
             
         
-    
+#calling play_game function, which internally calls the class Hangman    
 play_game(["apple", "orange", "pineapple", "strawberry", "lime"])
             
 
