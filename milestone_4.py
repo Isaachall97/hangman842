@@ -22,9 +22,9 @@ class Hangman:
         if guess in self.word: 
              print(f"Good guess! {guess} is in the word.")
              list_word = list(self.word)
-             for letter in list_word: 
+             for index, letter in enumerate(list_word): 
                  if guess == letter:
-                    self.word_guessed[list_word.index(letter)] = guess
+                    self.word_guessed[index] = letter
                  else:
                      continue
              self.num_letters = self.num_letters - 1
